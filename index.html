@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Illusion Planet - Piñatas Personalizadas</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Archivo de estilos externo -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Barra de navegación superior -->
+  <nav class="top-nav">
+    <div class="nav-title-container">
+      <a href="#" class="logo-link" onclick="window.location.href='#';">
+        <img src="imagenes/logo.png" alt="Logo">
+      </a>
+      <h1 class="nav-title">Illusion Planet</h1>
+    </div>
+    <ul>
+      <li><button onclick="scrollToSection('info-box')">Quiénes somos?</button></li>
+      <!-- Galería ya eliminada del menú superior -->
+      <li><button onclick="scrollToSection('proveedores')">Proveedores</button></li>
+      <li><button onclick="scrollToSection('ubicacion-envios')">Ubicación y Envios</button></li>
+      <li><button onclick="scrollToSection('contactenos')">Contáctenos</button></li>
+    </ul>
+    <div class="social-icons">
+      <button onclick="window.location.href='https://www.facebook.com/ilusionplanetcr?mibextid=ZbWKwL'">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+      <button onclick="window.location.href='https://www.instagram.com/ilusionplanetcr?igsh=MWJkdHZkNHMyM2tubQ=='">
+        <i class="fab fa-instagram"></i>
+      </button>
+      <button onclick="window.location.href='https://wa.me/message/HR5UHXMY7L7DM1'">
+        <i class="fab fa-whatsapp"></i>
+      </button>
+      <button onclick="window.location.href='https://www.tiktok.com/@ilusionplanet?_t=ZM-8tyQ3mxvVw7&_r=1'">
+        <i class="fab fa-tiktok"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Carrusel -->
+  <div class="carousel">
+    <!-- TÍTULO GRANDE REMOVIDO -->
+    <img src="imagenes/fondo1.jpg" class="slide active" alt="Fondo 1">
+    <img src="imagenes/fondo2.jpg" class="slide" alt="Fondo 2">
+    <img src="imagenes/fondo3.jpg" class="slide" alt="Fondo 3">
+    <!-- Canvas para confeti -->
+    <canvas id="confetti-canvas"></canvas>
+    <div class="carousel-controls">
+      <span class="dot active" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+  </div>
+  
+  <!-- Contenido principal -->
+  <main id="mainContent">
+    <!-- Sección "Quiénes somos" -->
+    <div class="info-box" id="info-box">
+      <p>Especialistas en piñatas y decoración personalizada en Costa Rica, ofreciendo diseños únicos y coloridos para hacer de tus celebraciones momentos inolvidables.</p>
+    </div>
+    
+    <!-- Menú desplegable con información de productos -->
+    <nav class="dropdown-menu" id="dropdownMenu">
+      <ul>
+        <li><a href="#" onclick="updateList(event, 'Piñatas')">Piñatas</a></li>
+        <li><a href="#" onclick="updateList(event, 'Cajitas')">Cajitas</a></li>
+        <li><a href="#" onclick="updateList(event, 'Sombreros')">Sombreros</a></li>
+        <li><a href="#" onclick="updateList(event, 'Candelas')">Candelas</a></li>
+        <li><a href="#" onclick="updateList(event, 'Banderines')">Banderines</a></li>
+        <li><a href="#" onclick="updateList(event, 'Confetti')">Confetti</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Contenedor dinámico para la galería de productos -->
+    <div id="itemList"></div>
+    
+    <!-- Sección "Proveedores" -->
+    <div class="proveedores" id="proveedores">
+      <p><strong>Proveedores:</strong></p>
+      <p>Somos proveedores para su tienda.</p>
+      <p>• Piñatas Redondas y con Forma: pedido mínimo de 50 unidades.</p>
+      <p>• Sombreros Locos: pedido mínimo de 30 unidades.</p>
+      <p>• Candelas: 30 unidades.</p>
+      <p>• Cajitas tipo lonchera (paquetes de 10 unidades): pedido mínimo de 30 unidades.</p>
+      <p>
+        <a href="https://wa.me/+50661065097" style="color: white; text-decoration: none;">
+          <i class="fab fa-whatsapp"></i> +506 61065097
+        </a>
+      </p>
+      <p>Contacto para pedidos al por mayor.</p>
+    </div>
+    
+    <!-- Sección "Ubicación y Envios" -->
+    <div class="extra-box" id="ubicacion-envios">
+      <p><strong>Ubicación y Envios:</strong></p>
+      <p>Nuestro taller está ubicado en Heredia, La Aurora, donde puede realizar el retiro de su pedido.</p>
+      <p>Realizamos envíos a todo el país: fuera del GAM con Correos de Costa Rica y dentro del GAM con mensajería privada. Para pedidos con urgencia, envíos con mensajería privada.</p>
+    </div>
+    
+    <!-- Sección "Contáctenos" -->
+    <div class="extra-box" id="contactenos">
+      <p><strong>Contáctenos:</strong> Puede contactarnos por medio de nuestras distintas redes sociales.</p>
+      <p>
+        <a href="https://wa.me/message/HR5UHXMY7L7DM1" style="color: white; text-decoration: none;">
+          <i class="fab fa-whatsapp"></i> +506 6106 5097
+        </a>
+      </p>
+      <p>
+        <a href="mailto:ilusionplanetcr@gmail.com" style="color: white; text-decoration: none;">
+          <i class="fas fa-envelope"></i> ilusionplanetcr@gmail.com
+        </a>
+      </p>
+      <p><strong>Horario de Atención:</strong> Lunes a Viernes: 8:00am - 6:00pm, Sábados: 9:00am - 5:00pm, Domingos: Cerrado</p>
+    </div>
+    
+    <!-- Botón y formulario de pedido -->
+    <button class="menu-toggle" id="menuButton">Menú</button>
+    <div class="ad-box" id="adBox" onclick="toggleForm()">REALIZA TU PEDIDO</div>
+    <div id="orderForm" class="order-form">
+      <h2>Formulario de Pedido</h2>
+      <form action="#" method="post" enctype="multipart/form-data">
+        <label for="customerName">Nombre:</label>
+        <input type="text" id="customerName" name="customerName" required>
+        <label for="customerEmail">Correo Electrónico:</label>
+        <input type="email" id="customerEmail" name="customerEmail" required>
+        <label for="customerPhone">Teléfono:</label>
+        <input type="tel" id="customerPhone" name="customerPhone" required>
+        <label for="customerAddress">Dirección de Envío:</label>
+        <input type="text" id="customerAddress" name="customerAddress" required>
+        <label for="orderDetails">Detalles del Pedido:</label>
+        <textarea id="orderDetails" name="orderDetails" required></textarea>
+        <label for="referenceImage">Imagen de Referencia:</label>
+        <input type="file" id="referenceImage" name="referenceImage" accept="image/*">
+        <button type="submit">Enviar Pedido</button>
+        <button type="button" onclick="toggleForm()">Cerrar</button>
+      </form>
+    </div>
+  </main>
+  
+  <!-- Modal para imagen ampliada e información de precios -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="">
+      <div id="modalInfo"></div>
+    </div>
+  </div>
+  
+  <!-- Librería de confeti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Archivo de script externo -->
+  <script src="script.js"></script>
+</body>
+</html>
+
