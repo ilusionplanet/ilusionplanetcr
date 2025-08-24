@@ -369,20 +369,7 @@ main {
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
-  /* Ajustes para pantallas pequeñas (celulares) */
-@media (max-width: 768px) {
-  .nav-title-container {
-    display: flex;
-    flex-direction: column;  /* Hace que el logo y el título se acomoden uno debajo del otro */
-    align-items: center;     /* Centra el contenido */
-    text-align: center;
-  }
 
-  .nav-title-container img {
-    max-width: 150px;  /* El logo no se hace gigante */
-    height: auto;
-    margin-bottom: 10px; /* Espacio debajo del logo */
-  }
 }
 
 
