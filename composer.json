@@ -1,0 +1,19 @@
+{
+    "name": "kenneth2024/intento11",
+    "description": "pagina web ip",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kenneth2024\\Intento11\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ip"
+        }
+    ],
+    "minimum-stability": "stable"
+}
